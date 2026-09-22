@@ -1,8 +1,11 @@
-const { Router } = require('express');
-const { getHealth } = require('./health.controller');
+const express = require('express');
+const router = express.Router();
+const healthController = require('./health.controller');
 
-const router = Router();
+// GET /api/health
+router.get('/', healthController.checkApiStatus);
 
-router.get('/health', getHealth);
+// GET /api/health/db
+router.get('/db', healthController.checkDbConnection);
 
 module.exports = router;

@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(globalLimiter);
 
 // Rutas base
-app.use('/api/v1', healthRoutes);
+app.use('/api/health', healthRoutes);
 
 // Manejador centralizado de errores
 app.use(errorHandler);
